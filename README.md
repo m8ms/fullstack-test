@@ -18,7 +18,7 @@ Rules
 3. Have fun, and do not feel pressured to spend more then a couple of hours on this task.
 4. Work on a personal fork and when you are done create a PR to [github.com/instantor/fullstack-test](https://github.com/instantor/fullstack-test).
 
-Character Information
+Index Information
 --------
 The character information can either be static or
 for extra credits it can be retrieved from [swapi.co](https://swapi.co) in the back-end.
