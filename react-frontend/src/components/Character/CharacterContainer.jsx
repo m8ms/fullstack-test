@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { omit } from "ramda";
 import { useCharacterProvider } from "../../hooks/providers";
 import CharacterView from "./CharacterView";
 
@@ -9,10 +10,23 @@ import CharacterView from "./CharacterView";
  */
 const CharacterContainer = () => {
   const character = useCharacterProvider();
+
+  const relevantMetadata = useMemo(
+    () => Object.entries(omit(["created", "edited", "url", "name"], character)),
+    [character]
+  );
+
   if (!character) {
     return <div>Loading...</div>;
   }
-  return <CharacterView character={character} />;
+
+  return (
+    <CharacterView
+      name={character.name}
+      url={character.url}
+      metadata={relevantMetadata}
+    />
+  );
 };
 
 export default CharacterContainer;
