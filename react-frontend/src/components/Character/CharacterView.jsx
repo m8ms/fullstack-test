@@ -7,6 +7,7 @@ import {
   Wrapper
 } from "./Character.styled";
 import { MetadataItem } from "../MetadataItem";
+import PropTypes from "prop-types";
 
 const CharacterView = ({ metadata, url, name }) => {
   return (
@@ -22,6 +23,12 @@ const CharacterView = ({ metadata, url, name }) => {
       </MetadataGrid>
     </Wrapper>
   );
+};
+
+CharacterView.propTypes = {
+  url: PropTypes.string,
+  name: PropTypes.string,
+  metadata: PropTypes.arrayOf(PropTypes.array)
 };
 
 export default CharacterView;

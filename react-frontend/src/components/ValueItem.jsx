@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const StringValue = ({ value }) => <div>{value}</div>;
 
@@ -23,4 +24,13 @@ export const ValueItem = ({ value }) => {
   }
 
   return <div>?</div>;
+};
+
+ValueItem.propTypes = {
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.array
+  ])
 };
